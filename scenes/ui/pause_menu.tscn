@@ -1,0 +1,69 @@
+[gd_scene load_steps=2 format=3 uid="uid://c65h4a4lo3k8g"]
+
+[ext_resource type="Script" path="res://scripts/ui/pause_menu.gd" id="1_pause_script"]
+
+[node name="PauseMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pause_script")
+
+[node name="DimBackground" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.55)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="PanelContainer" parent="CenterContainer"]
+custom_minimum_size = Vector2(360, 360)
+layout_mode = 2
+
+[node name="MenuBox" type="VBoxContainer" parent="CenterContainer/Panel"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="TitleLabel" type="Label" parent="CenterContainer/Panel/MenuBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "暂停"
+horizontal_alignment = 1
+
+[node name="SaveButton" type="Button" parent="CenterContainer/Panel/MenuBox"]
+custom_minimum_size = Vector2(300, 48)
+layout_mode = 2
+text = "保存"
+
+[node name="LoadButton" type="Button" parent="CenterContainer/Panel/MenuBox"]
+custom_minimum_size = Vector2(300, 48)
+layout_mode = 2
+text = "加载"
+
+[node name="SaveAndReturnButton" type="Button" parent="CenterContainer/Panel/MenuBox"]
+custom_minimum_size = Vector2(300, 48)
+layout_mode = 2
+text = "保存并退回到主界面"
+
+[node name="ResumeButton" type="Button" parent="CenterContainer/Panel/MenuBox"]
+custom_minimum_size = Vector2(300, 48)
+layout_mode = 2
+text = "继续游戏"
+
+[node name="StatusLabel" type="Label" parent="CenterContainer/Panel/MenuBox"]
+layout_mode = 2
+text = "按 Esc 打开或关闭"
+horizontal_alignment = 1
+autowrap_mode = 3

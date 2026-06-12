@@ -1,0 +1,79 @@
+[gd_scene load_steps=2 format=3 uid="uid://c0qj0m2wmolub"]
+
+[ext_resource type="Script" path="res://scripts/ui/camp_screen.gd" id="1_camp_script"]
+
+[node name="CampScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_camp_script")
+
+[node name="Margin" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MainLayout" type="VBoxContainer" parent="Margin"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="TitleLabel" type="Label" parent="Margin/MainLayout"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "营地"
+
+[node name="ResourcePanel" type="PanelContainer" parent="Margin/MainLayout"]
+layout_mode = 2
+
+[node name="ResourceText" type="Label" parent="Margin/MainLayout/ResourcePanel"]
+layout_mode = 2
+text = "资源占位：金币 0 | 食物 0 | 木材 0 | 药草 0"
+
+[node name="ActionGrid" type="GridContainer" parent="Margin/MainLayout"]
+layout_mode = 2
+columns = 4
+
+[node name="RosterButton" type="Button" parent="Margin/MainLayout/ActionGrid"]
+custom_minimum_size = Vector2(160, 52)
+layout_mode = 2
+text = "角色名单"
+
+[node name="ExpeditionButton" type="Button" parent="Margin/MainLayout/ActionGrid"]
+custom_minimum_size = Vector2(160, 52)
+layout_mode = 2
+text = "出征编队"
+
+[node name="TavernButton" type="Button" parent="Margin/MainLayout/ActionGrid"]
+custom_minimum_size = Vector2(160, 52)
+layout_mode = 2
+text = "酒馆"
+
+[node name="BuildingsButton" type="Button" parent="Margin/MainLayout/ActionGrid"]
+custom_minimum_size = Vector2(160, 52)
+layout_mode = 2
+text = "建筑"
+
+[node name="StorageButton" type="Button" parent="Margin/MainLayout/ActionGrid"]
+custom_minimum_size = Vector2(160, 52)
+layout_mode = 2
+text = "仓库"
+
+[node name="SmithButton" type="Button" parent="Margin/MainLayout/ActionGrid"]
+custom_minimum_size = Vector2(160, 52)
+layout_mode = 2
+text = "铁匠"
+
+[node name="AlchemyButton" type="Button" parent="Margin/MainLayout/ActionGrid"]
+custom_minimum_size = Vector2(160, 52)
+layout_mode = 2
+text = "炼金"

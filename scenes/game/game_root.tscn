@@ -1,0 +1,64 @@
+[gd_scene load_steps=5 format=3 uid="uid://cv6e3w36x5el"]
+
+[ext_resource type="Script" path="res://scripts/game/game_root.gd" id="1_game_root_script"]
+[ext_resource type="PackedScene" path="res://scenes/ui/camp_screen.tscn" id="2_camp"]
+[ext_resource type="PackedScene" path="res://scenes/ui/map_screen.tscn" id="3_map"]
+[ext_resource type="PackedScene" path="res://scenes/ui/pause_menu.tscn" id="4_pause"]
+
+[node name="GameRoot" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_game_root_script")
+
+[node name="RootContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="TopBar" type="PanelContainer" parent="RootContainer"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+
+[node name="TopBarContent" type="HBoxContainer" parent="RootContainer/TopBar"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="TitleLabel" type="Label" parent="RootContainer/TopBar/TopBarContent"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 24
+text = "营地"
+vertical_alignment = 1
+
+[node name="CampButton" type="Button" parent="RootContainer/TopBar/TopBarContent"]
+custom_minimum_size = Vector2(96, 44)
+layout_mode = 2
+text = "营地"
+
+[node name="MapButton" type="Button" parent="RootContainer/TopBar/TopBarContent"]
+custom_minimum_size = Vector2(96, 44)
+layout_mode = 2
+text = "地图"
+
+[node name="Content" type="Control" parent="RootContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="CampScreen" parent="RootContainer/Content" instance=ExtResource("2_camp")]
+layout_mode = 1
+
+[node name="MapScreen" parent="RootContainer/Content" instance=ExtResource("3_map")]
+visible = false
+layout_mode = 1
+
+[node name="PauseMenu" parent="." instance=ExtResource("4_pause")]
+visible = false
+layout_mode = 1

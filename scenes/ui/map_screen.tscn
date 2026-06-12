@@ -1,0 +1,49 @@
+[gd_scene load_steps=2 format=3 uid="uid://bq6ydk5r0d6y7"]
+
+[ext_resource type="Script" path="res://scripts/ui/map_screen.gd" id="1_map_script"]
+
+[node name="MapScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_map_script")
+
+[node name="Margin" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MainLayout" type="VBoxContainer" parent="Margin"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="TitleLabel" type="Label" parent="Margin/MainLayout"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "地图探索占位"
+
+[node name="DescriptionLabel" type="Label" parent="Margin/MainLayout"]
+layout_mode = 2
+text = "第一阶段只保留地图界面入口；有限视野、多地图和伏击会在后续阶段实现。"
+autowrap_mode = 3
+
+[node name="MapPlaceholder" type="PanelContainer" parent="Margin/MainLayout"]
+custom_minimum_size = Vector2(0, 360)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="PlaceholderLabel" type="Label" parent="Margin/MainLayout/MapPlaceholder"]
+layout_mode = 2
+text = "地图网格占位"
+horizontal_alignment = 1
+vertical_alignment = 1
